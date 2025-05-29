@@ -1,6 +1,10 @@
 import os
 
-# Get list of files in current directory
+print('Welcome to the Level-Up Corporation Data Extraction Tool')
+print('----------------FOR AUTHORIZED INTERNAL USE ONLY!!----------------\n')
+
+cwd = os.getcwd()
+
 files = os.listdir('.')
 
 file_info_list = []
