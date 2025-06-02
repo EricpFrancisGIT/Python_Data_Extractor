@@ -5,17 +5,18 @@ print('----------------FOR AUTHORIZED INTERNAL USE ONLY!!----------------\n')
 
 cwd = os.getcwd()
 
-files = os.listdir('.')
+files = os.listdir(cwd)
 
-file_info_list = []
+file_list = []
 
 for file in files:
-    if os.path.isfile(file):
+    if os.path.isfile(os.path.join(cwd, file)):
         file_info = {
             'name': file,
-            'size_bytes': os.path.getsize(file),
-            'absolute_path': os.path.abspath(file)
+            'size_bytes': os.path.getsize(os.path.join(cwd, file)),
+            'absolute_path': os.path.abspath(os.path.join(cwd, file))
         }
-        file_info_list.append(file_info)
+        file_list.append(file_info)
 
-print(file_info_list)
+
+print(file_list)
